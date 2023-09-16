@@ -11,7 +11,7 @@ public class Phonebook {
             temp.add(phone);
         }
         else {
-            temp = new ArrayList<Integer>(Collections.singletonList(phone));
+            temp = new ArrayList<>(Collections.singletonList(phone));
             book.put(person, temp);
         }
     }
@@ -34,12 +34,10 @@ public class Phonebook {
                 temp.add(record.getKey());
             }
             else {
-                temp = new ArrayList<String>(Collections.singletonList(record.getKey()));
+                temp = new ArrayList<>(Collections.singletonList(record.getKey()));
             }
             SortedKeysByLength.put(record.getValue().size(), temp);
         }
-
-        System.out.println(SortedKeysByLength.descendingMap());
 
         for (var keys : SortedKeysByLength.descendingMap().values()) {
             for (var key : keys) {
